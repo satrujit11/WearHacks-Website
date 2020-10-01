@@ -55,14 +55,14 @@ Now, open <http://127.0.0.1:8000/>.
     ```
 
 * By default, you will use the Django settings defined in `wearhacks_settings/settings/dev.py`. 
-* To use production settings defined in `wearhacks_settings/settings/prod.py`:
+* In order to use production settings defined in `wearhacks_settings/settings/prod.py`:
 
     ```bash
     (wearhacks-website) $ export APP_ENV=prod
     (wearhacks-website) $ python manage.py runserver
     ```
 
-* You can edit `wearhacks_settings/settings/private.py` to enter sensitive and user-specific settings. All settings in `private.py` will override those defined in `dev.py` and `prod.py`. See `wearhacks_website/settings/__init__.py` for more information.
+* You can edit `wearhacks_settings/settings/private.py` to enter sensitive and user-specific settings. All settings in `private.py` will override which defined in `dev.py` and `prod.py`. See `wearhacks_website/settings/__init__.py` for more information.
 
 ## Stripe settings
 
@@ -75,8 +75,8 @@ I wrote a `fabric` script to automate installation on Digital Ocean droplets usi
 Here are the setup instructions if you choose to do it with Digital Ocean. 
 
 * Create a Digital Ocean droplet with a Django installation image
-* Ssh into your droplet to obtain the postgresql database password. It will be displayed in the welcome message. 
-* Copy `wearhacks_website/settings/private.py` to `wearhacks_website/settings/server_private.py` and uncomment the postgresql settings. Edit in your postgresql password from the step above.
+* SHH into your droplet to obtain the postgresql database password. It will be displayed in the welcome message. 
+* Copy `wearhacks_website/settings/private.py` to `wearhacks_website/settings/server_private.py` and uncomment the postgresql settings. Edit in your postgresql password from the above step.
 
 * Make sure you have fabric installed locally. If you ran `setup.sh`, you already have it.
 * In `wearhacks_website/server_files/`, copy `fab_config_example.py` and rename it to `fab_config.py`. Edit in in your deployment host address.
